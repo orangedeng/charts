@@ -167,3 +167,7 @@ auth:
     enabled: "true"
 
 clusterName: ""
+
+grafanaProxy:
+  repository: nginx
+  tag: 1.15.2
