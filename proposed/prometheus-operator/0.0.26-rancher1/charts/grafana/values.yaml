@@ -165,3 +165,5 @@ keepOriginalDatasources: true
 auth:
   anonymous:
     enabled: "true"
+
+clusterName: ""

@@ -51,7 +51,7 @@ data:
         location / {
           proxy_pass http://localhost:3000/;
           sub_filter_types text/html;
-          sub_filter '<base href="/k8s/clusters/c-d5qfc/api/v1/namespaces/prometheus/services/http:prometheus-grafana:80/proxy/" />' '<base href="/" />';
+          sub_filter '<base href="/k8s/clusters/{{ .Values.clusterName }}/api/v1/namespaces/prometheus/services/http:prometheus-grafana:80/proxy/" />' '<base href="/" />';
         }
       }
     }
