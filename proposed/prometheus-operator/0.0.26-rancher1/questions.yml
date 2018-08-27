@@ -138,3 +138,10 @@ questions:
     description: "If undefined or null, uses the default StorageClass. Default to null"
     type: storageclass
     label: Default StorageClass for Alertmanager
+- variable: grafana.clusterName
+  default: ""
+  description: "The name of current cluster"
+  type: string
+  required: true
+  label: "Cluster Name"
+  group: "Grafana Settings"
