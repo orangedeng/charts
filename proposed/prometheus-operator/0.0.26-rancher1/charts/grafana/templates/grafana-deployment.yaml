@@ -37,6 +37,8 @@ spec:
             secretKeyRef:
               name: {{ template "grafana.server.fullname" . }}
               key: password
+        - name: GF_SERVER_ROOT_URL
+          value: '%(protocol)s://%(domain)s/k8s/clusters/{{ .Values.clusterName }}/api/v1/namespaces/{{ .Release.Namespace }}/services/http:{{ template "grafana.server.fullname" . }}:80/proxy/'
 {{- if .Values.extraVars }}
 {{ toYaml .Values.extraVars | indent 8 }}
 {{- end }}
