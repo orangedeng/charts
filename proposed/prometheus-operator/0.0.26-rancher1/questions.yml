@@ -9,6 +9,127 @@ questions:
   type: boolean
   show_subquestion_if: false
   group: "Container Images"
+  subquestions:
+  - variable: operator.image.repository
+    default: "quay.io/coreos/prometheus-operator"
+    description: "Operator image repository"
+    type: string
+    label: Operator image repository
+  - variable: operator.image.tag
+    default: "v0.20.0"
+    description: "Operator image tag"
+    type: string
+    label: Operator image tag
+  - variable: operator.configmapReload.repository
+    default: "quay.io/coreos/configmap-reload"
+    description: "Configmap reolader image repository"
+    type: string
+    label: Configmap reolader image repository
+  - variable: operator.configmapReload.tag
+    default: "v0.0.1"
+    description: Configmap reolader image tag
+    type: string
+    label: Configmap reolader image tag
+  - variable: operator.global.hyperkube.repository
+    default: "quay.io/coreos/hyperkube"
+    description: Kubectl operator image repository
+    type: string
+    label: Kubectl operator image repository
+  - variable: operator.global.hyperkube.tag
+    default: "v1.7.6_coreos.0"
+    description: Kubectl operator image tag
+    type: string
+    label: Kubectl operator image tag
+  - variable: operator.prometheusConfigReloader.repository
+    default: "quay.io/coreos/prometheus-config-reloader"
+    description: Prometheus configuration reloader image repository
+    type: string
+    label: Prometheus configuration reloader image repository
+  - variable: operator.prometheusConfigReloader.tag
+    default: "v0.20.0"
+    description: Prometheus configuration reloader image tag
+    type: string
+    label: Prometheus configuration reloader image tag
+  - variable: alertmanager.image.repository
+    default: "quay.io/prometheus/alertmanager"
+    description: Alertmanager image repository
+    type: string
+    label: Alertmanager image repository
+  - variable: alertmanager.image.tag
+    default: "v0.14.0"
+    description: Alertmanager image tag
+    type: string
+    label: Alertmanager image tag
+  - variable: prometheus.image.repository
+    default: "quay.io/prometheus/prometheus"
+    description: Prometheus server image repository
+    type: string
+    label: Prometheus server image repository
+  - variable: prometheus.image.tag
+    default: "v2.2.1"
+    description: Prometheus server image tag
+    type: string
+    label: Prometheus server image tag
+  - variable: grafana.image.repository
+    default: "grafana/grafana"
+    description: Grafana server image repository
+    type: string
+    label: Grafana server image repository
+  - variable: grafana.image.tag
+    default: "5.0.0"
+    description: Grafana server image tag
+    type: string
+    label: Grafana server image tag
+  - variable: grafana.grafanaWatcher.repository
+    default: "quay.io/coreos/grafana-watcher"
+    description: Grafana watcher image repository
+    type: string
+    label: Grafana watcher image repository
+  - variable: grafana.grafanaWatcher.tag
+    default: "v0.0.8"
+    description: Grafana watcher image tag
+    type: string
+    label: Grafana watcher image tag
+  - variable: grafana.grafanaProxy.repository
+    default: "nginx"
+    description: Grafana proxy image repository
+    type: string
+    label: Grafana proxy image repository
+  - variable: grafana.grafanaProxy.tag
+    default: "1.15.2"
+    description: Grafana proxy image tag
+    type: string
+    label: Grafana proxy image tag
+  - variable: exporter-node.image.repository
+    default: "quay.io/prometheus/node-exporter"
+    description: Node-exporter image repository
+    type: string
+    label: Node-exporter image repository
+  - variable: exporter-node.image.tag
+    default: "v0.15.2"
+    description: Node-exporter image tag
+    type: string
+    label: Node-exporter image tag
+  - variable: exporter-kube-state.kube_state_metrics.image.repository
+    default: "gcr.io/google_containers/kube-state-metrics"
+    description: Kube-state metrics exporter image repository
+    type: string
+    label: Kube-state metrics exporter image repository
+  - variable: exporter-kube-state.kube_state_metrics.image.tag
+    default: "v1.2.0"
+    description: Kube-state metrics exporter image tag
+    type: string
+    label: Kube-state metrics exporter image tag
+  - variable: exporter-kube-state.addon_resizer.image.repository
+    default: "gcr.io/google_containers/addon-resizer"
+    description: Kube-state metrics exporter resizer image repository
+    type: string
+    label: Kube-state metrics exporter resizer image repository
+  - variable: exporter-kube-state.addon_resizer.image.tag
+    default: "1.7"
+    description: Kube-state metrics exporter resizer image tag
+    type: string
+    label: Kube-state metrics exporter resizer image tag
 - variable: exporter-kubelets.https
   default: true
   description: "Kubelets exporter endpoint, set to false for GKE"
