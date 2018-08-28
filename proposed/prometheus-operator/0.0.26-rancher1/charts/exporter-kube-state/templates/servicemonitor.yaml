@@ -12,6 +12,8 @@ metadata:
 {{ toYaml .Values.additionalServiceMonitorLabels | indent 4 }}
     {{- end }}    
   name: {{ template "exporter-kube-state.fullname" . }}
+  annotations:
+    helm.sh/hook: "post-install"
 spec:
   jobLabel: component
   selector:

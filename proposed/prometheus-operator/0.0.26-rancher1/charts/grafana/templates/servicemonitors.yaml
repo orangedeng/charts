@@ -13,6 +13,8 @@ metadata:
 {{ toYaml .Values.additionalServiceMonitorLabels | indent 4 }}
     {{- end }}    
   name: {{ template "grafana.fullname" . }}
+  annotations:
+    helm.sh/hook: "post-install"
 spec:
   jobLabel: {{ template "grafana.fullname" . }}
   selector:

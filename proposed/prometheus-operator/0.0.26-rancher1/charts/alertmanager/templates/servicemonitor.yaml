@@ -13,6 +13,8 @@ metadata:
 {{ toYaml .Values.additionalServiceMonitorLabels | indent 4 }}
     {{- end }}
   name: {{ template "alertmanager.fullname" . }}
+  annotations:
+    helm.sh/hook: "post-install"
 spec:
   jobLabel: app
   selector:

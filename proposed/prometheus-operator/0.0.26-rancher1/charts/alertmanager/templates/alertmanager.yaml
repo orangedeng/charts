@@ -11,6 +11,8 @@ metadata:
 {{ toYaml .Values.labels | indent 4 }}
 {{- end }}
   name: {{ .Release.Name }}
+  annotations:
+    helm.sh/hook: "post-install"
 spec:
   baseImage: "{{ .Values.image.repository }}"
 {{- if .Values.externalUrl }}

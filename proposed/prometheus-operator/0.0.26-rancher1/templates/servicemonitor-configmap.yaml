@@ -14,6 +14,8 @@ data:
           release: "{{ .Release.Name }}"
           prometheus: {{ .Release.Name }}
         name: {{ .Values.operator.jobLabel }}
+        annotations:
+          helm.sh/hook: "post-install"
       spec:
         jobLabel: {{ template "prometheus-operator.name" . }}
         selector:
