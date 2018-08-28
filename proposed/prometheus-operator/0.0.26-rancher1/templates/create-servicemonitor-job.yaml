@@ -23,7 +23,7 @@ spec:
           image: "{{ .Values.operator.global.hyperkube.repository }}:{{ .Values.operator.global.hyperkube.tag }}"
           imagePullPolicy: "{{ .Values.operator.global.hyperkube.pullPolicy }}"
           command:
-            - ./kubectl
+            - kubectl
             - apply 
             - -f 
             - /tmp/servicemonitor/servicemonitor-operator.yaml
