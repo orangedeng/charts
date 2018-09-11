@@ -369,3 +369,8 @@ serviceMonitorNamespaceSelector: {}
 sidecarsSpec: []
 # - name: sidecar
 #   image: registry/name:tag
+
+nginx:
+  service:
+    ## Service type
+    type: ClusterIP
