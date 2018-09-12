@@ -30,7 +30,7 @@ data:
         location / {
           proxy_pass http://localhost:3000/;
           sub_filter_types text/html;
-          sub_filter '<base href="/k8s/clusters/{{ .Values.rancherClusterName }}/api/v1/namespaces/{{ .Release.Namespace }}/services/http:grafana-nginx:80/proxy/" />' '<base href="/" />';
+          sub_filter '<base href="/k8s/clusters/{{ .Values.rancherClusterId }}/api/v1/namespaces/{{ .Release.Namespace }}/services/http:grafana-nginx:80/proxy/" />' '<base href="/" />';
         }
       }
     }
